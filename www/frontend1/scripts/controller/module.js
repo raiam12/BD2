@@ -1,0 +1,1 @@
+var controllers = angular.module('bd2.controller', []);
