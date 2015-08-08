@@ -1,0 +1,42 @@
+<md-dialog id="dialog-edit" aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Factura #{{factura.numFact}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div>
+      <img src="http://www.aytojaen.es/portal/RecursosWeb/IMAGENES/1/0_1777_1.jpg">
+    </div>
+    <div class="positions">
+      <div class="cliente">
+        {{factura.cliente}}
+      </div>
+      <div class="numero">
+        {{factura.numFact}}
+      </div>
+      <div class="total">
+        {{factura.total}}
+      </div>
+      <div class="detalle-contenedor">
+        <div class="detalle" ng-repeat="item in detalles">
+          <span class="quantity">{{item.cantidad}}</span>
+          <span class="nombre">Codigo {{item.articulo}} - {{item.nombre}}</span>
+          <span class="precio">{{item.precio}}</span>
+        </div>
+      </div>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button ng-click="close()" class="md-primary">
+      Cerrar
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

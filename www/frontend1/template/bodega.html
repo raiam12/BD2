@@ -1,0 +1,63 @@
+<div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Bodegas" >
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ver Bodegas</h1>
+          <p>Aca podras ver la lista de nuestras bodegas</p>
+          <div ng-if="selectedG.length == 0" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+            <div class="table" ng-if="selectedG.length > 0">
+              <div class="row header">
+                <div flex="33">
+                 COdigo Bodega
+                </div>
+                <div flex="33">
+                  Ubicacion
+                </div>
+                <div flex="33">
+                  Descripcion
+                </div>
+              </div>
+
+              <div class="row" 
+                   ng-repeat="item in selectedG">
+                <div flex="33">
+                  {{item.codBodega}}
+                </div>
+                <div flex="33">
+                  {{item.ubicacion}}
+                </div>
+                <div flex="33"> 
+                  {{item.descripction}}
+                </div>
+              </div>
+              
+            </div>
+            <ul class="numeration" >
+              <li ng-repeat = "index in groups" ng-click="change($index)"><a>{{$index + 1}}</a></li>
+            </ul>
+        </md-content>
+      </md-tab>
+      <md-tab label="Ingresar Nueva Bodega">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ingresar</h1>
+          <md-input-container>
+            <label>Descripcion</label>
+            <input required name="clientName" ng-model="project.descripction">
+          </md-input-container>
+          <md-input-container>
+            <label>Ubicacion</label>
+            <input required name="clientName" ng-model="project.ubicacion">
+          </md-input-container>
+          
+          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Bodega</md-button>
+
+
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+  </md-content>
+</div>

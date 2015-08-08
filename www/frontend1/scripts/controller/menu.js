@@ -1,4 +1,4 @@
-controllers.controller('menu', ["$scope", "$mdDialog", function($scope, $mdDialog) {
+controllers.controller('menu', ["$scope", "$mdDialog", "$mdBottomSheet",function($scope, $mdDialog, $mdBottomSheet) {
 
 	var vm = this;
 	vm.notificationsEnabled = true;
@@ -16,8 +16,21 @@ controllers.controller('menu', ["$scope", "$mdDialog", function($scope, $mdDialo
 	        .ok('Gracias')
 	    );
 	};
+
+
+	vm.go = function (url) {
+		window.location.hash = url;
+	};
+
 	vm.checkVoicemail = function() {
 	    // This never happens.
 	};
+
+    vm.openGrid = function () {
+    	$mdBottomSheet.show({
+	      templateUrl: 'bottom-sheet-grid-template.html',
+	      controller: 'gridCtrl'
+	    });
+    };
 
 }]);

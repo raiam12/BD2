@@ -2,17 +2,17 @@
   <div class="menu-demo-container" layout-align="center center" layout="column">
     <md-menu>
       <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
-        <md-icon md-menu-origin md-font-icon="icon-home" ng-style="{ 'font-size':'48px'; }"></md-icon>
+        <md-icon md-menu-origin md-font-icon="icon-home" style="font-size:24px;"></md-icon>
       </md-button>
       <md-menu-content width="4">
         <md-menu-item>
           <md-button ng-click="ctrl.redial($event)">
             <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-            Podes ver toda la informacion de los productos.
+            Ir a la pagina principal.
           </md-button>
         </md-menu-item>
         <md-menu-item>
-          <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+          <md-button ng-click="ctrl.go('#/index')">
             <md-icon md-svg-icon="call:voicemail"></md-icon>
             Ir
           </md-button>
@@ -26,5 +26,83 @@
         </md-menu-item>
       </md-menu-content>
     </md-menu>
+     <hr />
+    <md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+        <img style="width:80%;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNCa6jeSS_Ayqiy9TwiulUrO1p6ODDfq4G7LabIXIB3i6FtLRbPZk6VNU" />
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="ctrl.go('#/empleados')">
+            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+            Podes ver toda la informacion de los empleados.
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="ctrl.go('#/empleados')">
+            <md-icon md-svg-icon="call:voicemail"></md-icon>
+            Ir
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="ctrl.toggleNotifications()">
+            <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+            Cancelar
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <hr />
+    <md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ5P9g3PMYg_w1KzHD0ApZG4tYplLZfXkaoCYrafyi1RuZFTjNl" style="width:80%;"/>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="ctrl.go('#/cliente')">
+            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+            Podes ver toda la informacion de los clientes.
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="ctrl.go('#/cliente')">
+            <md-icon md-svg-icon="call:voicemail"></md-icon>
+            Ir
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="ctrl.toggleNotifications()">
+            <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+            Cancelar
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+
+
+    <hr>
+    <md-menu>
+      <!-- <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click=""> -->
+        <label ng-click="ctrl.openGrid()">Mas opciones</label>
+      <!-- </md-button> -->
+    </md-menu>
+
+
+
+    <script type="text/ng-template" id="bottom-sheet-grid-template.html"><md-bottom-sheet class="md-grid">
+    <md-list>
+      <md-list-item ng-repeat="item in items">
+
+        <md-button class="md-grid-item-content new-buttons" ng-click="listItemClick($index, item.link)">
+          <div class="md-grid-text"> {{ item.name }} </div>
+        </md-button>
+
+      </md-list-item>
+    </md-list>
+  </md-bottom-sheet>
+  </script>
   </div>
 </div>

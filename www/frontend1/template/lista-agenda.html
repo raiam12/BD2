@@ -1,0 +1,42 @@
+<md-dialog aria-label="Mango (Fruit)" style="width:50%;">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Calendario para el dia...</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    
+
+
+
+  <section ng-repeat="cita in citas" class="normal" ng-class="{'busy':cita.busy}">
+      <md-list layout-padding>
+        <md-list-item class="md-3-line" >
+      
+            <!-- <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}"> -->
+            <div class="md-list-item-text" >
+              <h2 class="md-primary"><span>{{cita.hours}}</span>:<span ng-if="cita.minutes != 0">{{cita.minutes}}</span><span ng-if="cita.minutes == 0">00</span><span ng-if="cita.hours < 12"> am</span><span ng-if="cita.hours >= 12"> pm</span></h2>
+              <h3 ng-if="cita.busy">Esta Ocupado para {{cita.model.nombreMascota}}</h3>
+              <h3 ng-if="!cita.busy">Disponible</h3>
+      
+              <!-- <h4>{{cita.hora}}</h4>
+              <p>
+                {{cita.minutos}}
+              </p> -->
+            </div>
+        </md-list-item>
+      </md-list>
+    </section>
+
+
+
+
+  </md-dialog-content>
+    <md-button ng-click="cancel()" class="md-primary">
+      Salir
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

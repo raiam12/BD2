@@ -1,0 +1,44 @@
+          
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Actualizando</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-input-container>
+            <label>Cedula</label>
+            <input disabled required name="clientName" ng-model="project.codEmpleado">
+          </md-input-container>
+          <md-input-container>
+            <label>Nombre Completo</label>
+            <input required name="clientName" ng-model="project.nombre">
+          </md-input-container>
+          <div layout="row">
+            <md-input-container>
+              <label>Cargo</label>
+              <input type="text" ng-model="project.cargo"/>
+            </md-input-container>
+            <md-input-container>
+              <label>Fecha de Ingreso</label>
+              <input type="date" ng-model="project.fecha_ing"/>
+            </md-input-container>
+            <md-select placeholder="Estado Civil" ng-model="project.estado">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">{{state.abbrev}}</md-option>
+            </md-select>
+            <md-select placeholder="Codigo Empleado" ng-model="project.tipoEmpleado">
+              <md-option ng-repeat="state in typeEmployees" value="{{state.codTipoEmpleado}}">{{state.codTipoEmpleado}}</md-option>
+            </md-select>
+          </div>
+          <md-button class="md-primary md-raised" ng-click="actualizar(project)" flex flex-md="100">
+      Ingresar cita
+    </md-button>
+  </md-dialog-content>
+    <md-button ng-click="cancel()" class="md-primary">
+      Cancelar
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

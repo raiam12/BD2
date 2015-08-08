@@ -1,0 +1,121 @@
+<div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Articulos" >
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ver Articulos</h1>
+          <p>Aca podras ver todos los articulos del lugar</p>
+          <div ng-if="selectedG.length == 0" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+            <div class="table" ng-if="selectedG.length > 0">
+              <div class="row header">
+                <div flex="33">
+                 ID
+                </div>
+                <div flex="55">
+                  Nombre
+                </div>
+                <div flex>
+                  Precio
+                </div>
+                <div flex>
+                  Cantidad
+                </div>
+                <div flex>
+                  Codigo de bodega
+                </div>
+                <div flex>
+                  Codigo de Proveedor
+                </div>
+                <div flex>
+                  Estado
+                </div>
+                <div flex>
+                  Activo
+                </div>
+                <div flex>
+                  Comentario
+                </div>
+              </div>
+              <div class="row" 
+                   ng-repeat="item in selectedG">
+                <div flex="33">
+                  {{item.codarticulo}}
+                </div>
+                <div flex="55">
+                  {{item.nombre}}
+                </div>
+                <div flex>
+                  {{item.precio}}
+                </div>
+                <div flex>
+                  {{item.cantidad}}
+                </div>
+                <div flex>
+                  {{item.bodega}}
+                </div>
+                <div flex>
+                  {{item.proveedor}}
+                </div>
+                <div flex>
+                  {{item.estado}}
+                </div>
+                <div flex>
+                  {{item.activo}}
+                </div>
+                <div flex>
+                  {{item.comentario}}
+                </div>
+              </div>
+              
+            </div>
+            <ul class="numeration" >
+              <li ng-repeat = "index in groups" ng-click="change($index)"><a>{{$index + 1}}</a></li>
+            </ul>
+        </md-content>
+      </md-tab>
+      <md-tab label="Ingresar Nuevo Articulo">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ingresar</h1>
+          <md-input-container>
+            <label>Nombre Articulo</label>
+            <input required name="clientName" ng-model="project.nombre">
+          </md-input-container>
+          <div layout="row">
+            <md-input-container>
+              <label>Precio</label>
+              <input type="number" ng-model="project.precio"/>
+            </md-input-container>
+            <md-input-container>
+              <label>Cantidad</label>
+              <input type="number" ng-model="project.cantidad"/>
+            </md-input-container>
+            <md-select placeholder="Estado" ng-model="project.estado">
+              <md-option ng-repeat="state in estados" value="{{state}}">{{state}}</md-option>
+            </md-select>
+            <md-select placeholder="Activo" ng-model="project.activo">
+              <md-option ng-repeat="state in activo" value="{{state}}">{{state}}</md-option>
+            </md-select>
+          </div>
+          <md-input-container>
+            <label>Comentario</label>
+            <input required name="clientName" ng-model="project.comentario">
+          </md-input-container>
+          <div layout="row">
+            <md-select placeholder="Bodega" ng-model="project.bodega">
+              <md-option ng-repeat="state in bodega" value="{{state.codBodega}}">{{state.codBodega}}</md-option>
+              </md-select>
+              <md-select placeholder="Proveedor" ng-model="project.proveedor">
+                <md-option ng-repeat="state in proveedor" value="{{state.codprov}}">{{state.codprov}}</md-option>
+              </md-select>
+          </div>
+          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Articulo</md-button>
+
+
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+  </md-content>
+</div>

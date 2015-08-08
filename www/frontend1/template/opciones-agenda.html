@@ -1,0 +1,24 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Dia {{date}}</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-button class="md-primary md-raised" ng-click="answer(1)" flex flex-md="100" ng-if="hideOption == false;" ng-show="open">
+      Solicitar una cita
+    </md-button>
+    <md-button class="md-primary md-raised" ng-click="answer(2)" flex flex-md="100" ng-show="open">
+      Ver citas del dia
+    </md-button>
+    <p ng-show="!open">No abrimos Domingos!!</p>
+  </md-dialog-content>
+  </md-dialog-content>
+    <md-button ng-click="cancel()" class="md-primary">
+      Cancelar
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

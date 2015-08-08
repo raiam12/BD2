@@ -1,0 +1,103 @@
+<div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Facturas" >
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ver Facturas</h1>
+          <p>Aca podras ver la lista de todas las facturas de la empresa, y filtarlas a como gustes</p>
+          <div ng-if="selectedG.length == 0" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+          <md-input-container ng-if="selectedG.length > 0">
+            <label>Buscar en factura</label>
+            <input name="clientName" ng-model="project.criteria">
+          </md-input-container>
+            <div class="table" ng-if="selectedG.length > 0">
+              <div class="row header">
+                <div flex="33">
+                 Numero
+                </div>
+                <div flex="55">
+                  Monto
+                </div>
+                <div flex>
+                  Codigo Cliente
+                </div>
+                <div flex>
+                  Codigo Empleado
+                </div>
+                <div flex>
+                  Fecha de emision
+                </div>
+              </div>
+              <div class="row" 
+                   ng-repeat="item in selectedG | filter: project.criteria | orderBy:'numFact'"
+                   ui-sref="facturacion.view({id: '{{item.numFact}}'})">
+                <div flex="33">
+                  {{item.numFact}}
+                </div>
+                <div flex="55">
+                  {{item.total}}
+                </div>
+                <div flex>
+                  {{item.cliente}}
+                </div>
+                <div flex>
+                  {{item.empleado}}
+                </div>
+                <div flex>
+                  {{item.fecha_emision}}
+                </div>
+              </div>
+              
+            </div>
+              {{project.criteria}}
+            <ul class="numeration" >
+              <li ng-repeat = "index in groups" ng-click="change($index)"><a>{{$index + 1}}</a></li>
+            </ul>
+        </md-content>
+      </md-tab>
+      <md-tab label="Ingresar Nueva Factura" class="factura">
+        <div class="factura"></div>
+        <md-content class="md-padding factura-content">
+          
+          <md-select placeholder="Codigo del Dueno" ng-model="project.codDueno" class="factura-dueno">
+              <md-option ng-repeat="cliente in clientes" value="{{cliente.codCliente}}">{{cliente.codCliente}}</md-option>
+            </md-select>
+            <span class="totalBuy" ng-bind="orderTotal()">{{project.total}}</span>
+          <div class="detalle-factura">
+            <div class="custom" ng-repeat="element in range() track by $index">
+              <md-input-container class="factura-detalle-cant">
+                <input required name="clientName" ng-model="project.detalle[$index].cantidadAPedir">
+              </md-input-container>     
+              <md-autocomplete
+                class="custom-autocomplete"
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.nombre"
+                md-min-length="0"
+                md-selected-item-change="itemChange($index,item)",
+                placeholder="Escoge un producto por ID o nombre."
+                md-menu-class="autocomplete-custom-template">
+                <md-item-template>
+                  <span>{{item.codarticulo}} - {{item.nombre}}</span>
+                </md-item-template>
+              </md-autocomplete>  
+                <span>{{project.detalle[$index].precio}}</span>
+                <span class="importe">{{project.detalle[$index].precioTotal}}</span>
+                <span class="remover" ng-if="$index != 0"ng-click="delete($index)"></span>
+            </div>
+          </div>
+          
+          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Factura</md-button>
+          <span class="insertar" ng-click="add()" role="button" tabindex="0"></span>
+
+
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+  </md-content>
+  <div ui-view></div>
+</div>

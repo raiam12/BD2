@@ -149,3 +149,376 @@ div[layout="column"] {height:100% !important;}
     position: fixed;
     top: 48%;
     z-index: 100; }
+
+
+
+    hr {
+      width: 100%;
+      height: 1px;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .gridListdemoDynamicTiles md-icon {
+  width: 50%;
+  height: 50%; }
+.gridListdemoDynamicTiles md-icon svg {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+.gridListdemoDynamicTiles .s64 {
+  font-size: 64px; }
+.gridListdemoDynamicTiles .s32 {
+  font-size: 48px; }
+.gridListdemoDynamicTiles md-icon.fa {
+  display: block;
+  padding-left: 0; }
+.gridListdemoDynamicTiles md-icon.s32 span {
+  padding-left: 8px; }
+.gridListdemoDynamicTiles md-grid-list {
+  margin: 8px; }
+.gridListdemoDynamicTiles .gray {
+  background: #f5f5f5; }
+.gridListdemoDynamicTiles .green {
+  background: #b9f6ca; }
+.gridListdemoDynamicTiles .yellow {
+  background: #ffff8d; }
+.gridListdemoDynamicTiles .blue {
+  background: #84ffff; }
+.gridListdemoDynamicTiles .darkBlue {
+  background: #80d8ff; }
+.gridListdemoDynamicTiles .deepBlue {
+  background: #448aff; }
+.gridListdemoDynamicTiles .purple {
+  background: #b388ff; }
+.gridListdemoDynamicTiles .lightPurple {
+  background: #8c9eff; }
+.gridListdemoDynamicTiles .red {
+  background: #ff8a80; }
+.gridListdemoDynamicTiles .pink {
+  background: #ff80ab; }
+.gridListdemoDynamicTiles md-grid-tile {
+  transition: all 300ms ease-out 50ms; }
+.gridListdemoDynamicTiles md-grid-tile md-icon {
+  padding-bottom: 32px; }
+.gridListdemoDynamicTiles md-grid-tile md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.68);
+  height: 36px; }
+.gridListdemoDynamicTiles md-grid-tile-footer figcaption {
+  width: 100%; }
+.gridListdemoDynamicTiles md-grid-tile-footer figcaption h3 {
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: center; }
+
+md-sidenav md-toolbar {
+  height: 310px;
+}
+
+md-sidenav md-toolbar > h1 {
+  height: 200px;
+  display: inline-block !important;
+  padding-top: 10px !important;
+}
+
+.index-img {
+    position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+}
+
+.table {display: table;  background-color: #f6f6f6;}
+.table .row {display: table-row;}
+.table .row div {display: table-cell;
+  border: 1px solid ghostwhite;
+  vertical-align: middle;
+  text-align: center;
+  padding: 15px;}
+  .table .row.header div {
+  background: rgb(63,81,181);
+  color: white;
+}
+
+.numeration {display: table-row;}
+.numeration li {display: table-cell;padding:0 10px;}
+
+.table {box-shadow: 0px 6px 15px -3px black;}
+
+
+.new-buttons {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#dialog-edit {
+  position: relative;
+}
+.cliente {
+    position: absolute;
+  top: 121px;
+  left: 113px;
+}
+
+.numero {
+  position: absolute;
+  top: 59px;
+  right: 100px;
+}
+
+.total {
+  position: absolute;
+  right: 64px;
+  top: 399px;
+}
+.detalle-contenedor {
+  position: absolute;
+  top: 191px;
+  left: 95px;
+}
+
+.detalle-contenedor .nombre {
+      margin-left: 75px;
+    width: 222px;
+    display: inline-block;
+}
+
+.detalle-contenedor .precio {
+    margin-left: 100px;
+}
+
+.factura-content {
+  background: url('http://www.aytojaen.es/portal/RecursosWeb/IMAGENES/1/0_1777_1.jpg') no-repeat 50% 12%/100% 104%;
+  height: 646px;
+}
+
+.factura-numfact {
+  width: 131px;
+    position: absolute;
+    top: 17px;
+    right: 102px;
+}
+
+.detalle-factura {
+    position: absolute;
+    width: 100%;
+    top: 257px;
+}
+
+.detalle-factura .custom .factura-detalle-cant {
+    width: 84px;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 0 85px;
+    overflow: hidden;
+}
+
+md-autocomplete input:not(.md-input),
+md-autocomplete md-autocomplete-wrap,
+md-autocomplete {
+  height: 25px !important;
+}
+
+md-autocomplete {
+  display: inline-block;
+  width: 45%;
+  margin-left: 30px;
+}
+
+.custom span {
+  margin-left: 51px;
+}
+
+.importe {
+  margin-left: 94px !important;
+}
+
+.factura-dueno {
+      position: absolute;
+    top: 126px;
+    left: 156px;
+}
+span.totalBuy.ng-binding {
+    position: absolute;
+    bottom: 8px;
+    right: 82px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.total {
+  font-weight: 700;
+}
+
+span.totalBuy.ng-binding:before, span.totalBuy.ng-binding::before, .total::before, .total:before {
+    content: "$";
+}
+
+.detalle {
+  position: relative;
+}
+
+.detalle .quantity {
+    width: 7px;
+    display: inline-block;
+}
+
+.insertar {
+  position: absolute;
+    right: 34px;
+    top: 233px;
+    background: url('http://365psd.com/images/premium/thumbs/225/checkmark-and-cross-and-plus-and-minus-in-circles-1053461.jpg') no-repeat 10px -20px/40px 40px;
+    width: 30px;
+    height: 30px;
+  }
+.detalle-factura .custom {
+  position: relative;
+}
+
+span.remover {
+    position: absolute;
+    right: 55px;
+    cursor: pointer;
+    background-color: red;
+    width: 30px;
+    height: 20px;
+    top: 10px;
+    background: url('http://365psd.com/images/premium/thumbs/225/checkmark-and-cross-and-plus-and-minus-in-circles-1053461.jpg') no-repeat 10px 0px/40px 40px;
+}
+
+
+
+
+/*
+ picker
+*/
+
+/* This was breaking out bootstrap! */
+div#datepicker {
+    display: block !important;
+}
+[name="testName"] {
+    display: none;
+}
+mb-datepicker .form-control {
+  width: 135px!important;
+}
+.mb-datepicker {
+  width: 400px;
+  position: relative;
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  z-index: 3000;
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(37, 53, 50, 0.37);
+  -moz-box-shadow:    1px 1px 7px 0px rgba(37, 53, 50, 0.37);
+  box-shadow:         1px 1px 7px 0px rgba(37, 53, 50, 0.37);
+}
+.mb-datepicker  table {
+  width: 400px;
+  table-layout:fixed;
+}
+.mb-datepicker table thead tr td{
+  padding-bottom: 10px;
+}
+.header-item {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header-month {
+  text-align: center;
+  width: 70%;
+  display: inline-block;
+}
+.header-right {
+  text-align: right;
+}
+.normal {    background-color: aliceblue;}
+section.normal.ng-scope {
+    box-shadow: 0px 0px 11px -3px black;
+}
+.busy {    background-color: antiquewhite;}
+
+caption {
+  padding: 0!important;
+}
+.header-year-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  background-color: #15A5DB;
+}
+.header-nav-wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #626262;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  background-color: #E8E8E8;
+}
+.header-year {
+  padding-top: 1px;
+  padding-bottom: 0!important;
+  text-align: center;
+  width: 80%;
+  display: inline-block;
+}
+.mb-datepicker table tbody tr td{
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  color: #626262;
+}
+.mb-datepicker table tbody tr.days .day-item:hover{
+  background-color: #15A5DB;
+  color: #f5f5f5!important;
+}
+.mb-datepicker table tbody tr td.day-head{
+  background-color: #f5f5f5;
+  cursor: default;
+  border-bottom: 1px solid #ECECEC;
+  font-weight: 600;
+}
+.mb-datepicker table tbody tr td.day-head:hover{
+  background-color: #f5f5f5;
+  color: #626262;
+}
+.today {
+  background: #61C7EC!important;
+  color: white!important;
+}
+.other {
+}
+.weekend {
+  color:#a3a3a3!important;
+}
+.day {
+  color:#60C1E6!important
+}
+.disabled {
+  background:#ECECEC!important;
+  color:#a3a3a3!important;
+}
+.disabled:hover {
+  background:#ECECEC!important;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.mb-input-field {
+  border-radius: 0;
+  border-bottom: 1px solid red;
+}
+
+
+

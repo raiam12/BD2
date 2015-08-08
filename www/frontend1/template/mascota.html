@@ -3,7 +3,7 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Empleados" >
         <md-content class="md-padding">
-          <h1 class="md-display-2">Ver Empleados</h1>
+          <h1 class="md-display-2">Ver Mascotas!</h1>
           <p>Aca podras ver la lista de todos los clientes de nuestra veterinaria</p>
           <div ng-if="selectedG.length == 0" layout="row" layout-sm="column" layout-align="space-around">
             <md-progress-circular md-mode="indeterminate"></md-progress-circular>
@@ -11,33 +11,32 @@
             <div class="table" ng-if="selectedG.length > 0">
               <div class="row header">
                 <div flex="33">
-                 ID
+                 Codigo Mascota
                 </div>
                 <div flex="55">
                   Nombre
                 </div>
                 <div flex>
-                  Cargo
+                  Raza
                 </div>
                 <div flex>
-                  Ingreso
+                  Codigo del Dueno
                 </div>
               </div>
 
               <div class="row" 
-                   ng-repeat="item in selectedG"
-                   ng-click="actualizar(item.codEmpleado)">
-                <div flex="33">
-                  {{item.codEmpleado}}
+                   ng-repeat="item in selectedG">
+                <div flex>
+                  {{item.codmascota}}
                 </div>
-                <div flex="55">
+                <div flex>
                   {{item.nombre}}
                 </div>
                 <div flex>
-                  {{item.cargo}}
+                  {{item.raza}}
                 </div>
                 <div flex>
-                  {{item.fecha_ing}}
+                  {{item.codDueno}}
                 </div>
               </div>
               
@@ -50,32 +49,23 @@
       <md-tab label="Ingresar Nuevo Empleado">
         <md-content class="md-padding">
           <h1 class="md-display-2">Ingresar</h1>
+          
           <md-input-container>
-            <label>Cedula</label>
-            <input required name="clientName" ng-model="project.codEmpleado">
-          </md-input-container>
-          <md-input-container>
-            <label>Nombre Completo</label>
+            <label>Nombre</label>
             <input required name="clientName" ng-model="project.nombre">
           </md-input-container>
-          <div layout="row">
-            <md-input-container>
-              <label>Cargo</label>
-              <input type="text" ng-model="project.cargo"/>
-            </md-input-container>
-            <md-input-container>
-              <label>Fecha de Ingreso</label>
-              <input type="date" ng-model="project.fecha_ing"/>
-            </md-input-container>
-            <md-select placeholder="Estado Civil" ng-model="project.estado">
-              <md-option ng-repeat="state in states" value="{{state.abbrev}}">{{state.abbrev}}</md-option>
+          <md-input-container>
+            <label>Raza</label>
+            <input required name="clientName" ng-model="project.raza">
+          </md-input-container>
+          <md-input-container>
+            <label>Fecha de Nacimiento</label>
+            <input type="date" ng-model="project.nacimiento"/>
+          </md-input-container>
+          <md-select placeholder="Codigo del Dueno" ng-model="project.codDueno">
+              <md-option ng-repeat="cliente in clientes" value="{{cliente.codCliente}}">{{cliente.codCliente}}</md-option>
             </md-select>
-            <md-select placeholder="Codigo Empleado" ng-model="project.tipoEmpleado">
-              <md-option ng-repeat="state in typeEmployees" value="{{state.codTipoEmpleado}}">{{state.codTipoEmpleado}}</md-option>
-            </md-select>
-          </div>
-
-          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Empleado</md-button>
+          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Mascota</md-button>
 
 
         </md-content>

@@ -1,118 +1,50 @@
-controllers.controller('LandingCtrl', ['$scope', '$timeout', '$mdSidenav', '$mdUtil','$log', 
-		function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
-			$scope.toggleLeft = buildToggler('left');
-		    $scope.toggleRight = buildToggler('right');
+controllers.controller('LandingCtrl', ['$scope', 
+		function ($scope) {
+	        
+	        $scope.names = [
+	        	"Lucas","Pedro","Guillermo","Tito","Oso","Lukis","Quito","Fifi","Bolita","Perezoso","Giganton"
+	        ];
+			
+			$scope.tiles = buildGridModel({
+	            icon : "images/pet-",
+	            title: "",
+	            background: ""
+	        });
 
 
-
-		    var imagePath = 'https://material.angularjs.org/latest/img/list/60.jpeg';
-		    $scope.messages = [
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		      {
-		        face : imagePath,
-		        what: 'Brunch this weekend?',
-		        who: 'Min Li Chan',
-		        when: '3:08PM',
-		        notes: " I'll be in your neighborhood doing errands"
-		      },
-		    ];
-		    /**
-		     * Build handler to open/close a SideNav; when animation finishes
-		     * report completion in console
-		     */
-		    function buildToggler(navID) {
-		      var debounceFn =  $mdUtil.debounce(function(){
-		            $mdSidenav(navID)
-		              .toggle()
-		              .then(function () {
-		                $log.debug("toggle " + navID + " is done");
-		              });
-		          },300);
-		      return debounceFn;
+		    function buildGridModel(tileTmpl){
+		      var it, results = [ ];
+		      for (var j=0; j<11; j++) {
+		        it = angular.extend({},tileTmpl);
+		        it.icon  = it.icon + (j+1) + ".jpg";
+		        it.title = $scope.names[j];
+		        it.span  = { row : 1, col : 1 };
+		        switch(j+1) {
+		          case 1:
+		            it.background = "red";
+		            it.span.row = it.span.col = 2;
+		            break;
+		          case 2: it.background = "green";         break;
+		          case 3: it.background = "darkBlue";      break;
+		          case 4:
+		            it.background = "blue";
+		            it.span.col = 2;
+		            break;
+		          case 5:
+		            it.background = "yellow";
+		            it.span.row = it.span.col = 2;
+		            break;
+		          case 6: it.background = "pink";          break;
+		          case 7: it.background = "darkBlue";      break;
+		          case 8: it.background = "purple";        break;
+		          case 9: it.background = "deepBlue";      break;
+		          case 10: it.background = "lightPurple";  break;
+		          case 11: it.background = "yellow";       break;
+		        }
+		        results.push(it);
+		      }
+		      return results;
 		    }
-
-		    $scope.close = function () {
-		      $mdSidenav('left').close()
-		        .then(function () {
-		          $log.debug("close LEFT is done");
-		        });
-		    };
-
-		    $scope.close = function () {
-		      $mdSidenav('right').close()
-		        .then(function () {
-		          $log.debug("close RIGHT is done");
-		        });
-		    };
 		}
 ]);
 

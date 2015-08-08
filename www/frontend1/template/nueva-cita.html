@@ -1,0 +1,31 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Creando Cita...</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-select placeholder="Mascota" ng-model="project.codMascota">
+      <md-option ng-repeat="mascota in mascotas" value="{{mascota.codmascota}}">{{mascota.nombre}} - {{mascota.raza}}</md-option>
+    </md-select>
+    <md-input-container>
+      <label>Hora (8 a 17)</label>
+      <input type="number" ng-model="project.hora"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Minutos (0 o 30)</label>
+      <input type="number" ng-model="project.minutos"/>
+    </md-input-container>
+
+    <md-button class="md-primary md-raised" ng-click="createCita()" flex flex-md="100">
+      Ingresar cita
+    </md-button>
+  </md-dialog-content>
+    <md-button ng-click="cancel()" class="md-primary">
+      Cancelar
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

@@ -1,0 +1,23 @@
+
+<div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Sistema de Cita" >
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Citas del sistema</h1>
+          <p>Seleccione un dia para reservar o consultar citas</p>
+
+          <mb-datepicker element-id='date1'
+          		   action="click(model)"
+                   input-class="testClass"
+                   input-name="testName"
+                   arrows="arrows"
+                   calendar-header="header"
+                   date="date12"
+                   date-format="MM-DD-YYYY"></mb-datepicker
+
+        </md-content>
+      </md-tab>
+  </md-content>
+  <div ui-view></div>
+</div>

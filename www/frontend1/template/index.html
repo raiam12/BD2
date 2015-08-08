@@ -1,100 +1,26 @@
-
-
-
-
-<md-content flex layout-padding>
-      <div layout="column" layout-fill layout-align="top center">
-        <!-- <p>
-        The left sidenav will 'lock open' on a medium (>=960px wide) device.
-        </p>
-        <p>
-        The right sidenav will focus on a specific child element.
-        </p>
-        <div>
-          <md-button ng-click="toggleLeft()"
-            class="md-primary" hide-gt-md>
-            Toggle left
-          </md-button>
-        </div>
-        <div>
-          <md-button ng-click="toggleRight()"
-            class="md-primary">
-            Toggle right
-          </md-button>
-        </div> -->
-
-
-
-
-      <div layout="column" flex layout-fill>
-        <md-content style="height: 600px;" md-theme="altTheme">
-          <section>
-            <md-subheader class="md-primary">Unread Messages</md-subheader>
-            <md-list layout-padding>
-              <md-list-item class="md-3-line" ng-repeat="message in messages">
-                  <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                  <div class="md-list-item-text">
-                    <h3>{{message.what}}</h3>
-                    <h4>{{message.who}}</h4>
-                    <p>
-                      {{message.notes}}
-                    </p>
-                  </div>
-              </md-list-item>
-            </md-list>
-          </section>
-          <section>
-            <md-subheader class="md-warn">Late Messages</md-subheader>
-            <md-list layout="column" layout-padding>
-              <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                <div class="md-list-item-text">
-                  <h3>{{message.what}}</h3>
-                  <h4>{{message.who}}</h4>
-                  <p>
-                    {{message.notes}}
-                  </p>
-                </div>
-              </md-list-item>
-            </md-list>
-          </section>
-          <section>
-            <md-subheader>Read Messages</md-subheader>
-            <md-list layout="column" layout-padding>
-              <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                <div class="md-list-item-text">
-                  <h3>{{message.what}}</h3>
-                  <h4>{{message.who}}</h4>
-                  <p>
-                    {{message.notes}}
-                  </p>
-                </div>
-              </md-list-item>
-            </md-list>
-          </section>
-          <section>
-            <md-subheader class="md-accent">Archived messages</md-subheader>
-            <md-list layout="column" layout-padding>
-              <md-list-item class="md-3-line" ng-repeat="message in messages">
-                <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                <div class="md-list-item-text">
-                  <h3>{{message.what}}</h3>
-                  <h4>{{message.who}}</h4>
-                  <p>
-                    {{message.notes}}
-                  </p>
-                </div>
-              </md-list-item>
-            </md-list>
-          </section>
-        </md-content>
-      </div>
-
-
-
-
-
-      </div>
-      <div flex></div>
-    </md-content>
+<div layout="column" style="padding-bottom: 15px;">
+  <md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Inicio</h2>
+    </div>
+  </md-toolbar>
+  <md-content layout-padding style="height: 600px;padding: 24px;">
+   <h1 class="md-display-2">Nuestros animales...</h1>
+          <div class="gridListdemoDynamicTiles" flex>
+            <md-grid-list
+                  md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                  md-row-height-gt-md="1:1" md-row-height="4:3"
+                  md-gutter="8px" md-gutter-gt-sm="4px" >
+              <md-grid-tile ng-repeat="tile in tiles"
+                            md-rowspan="{{tile.span.row}}"
+                            md-colspan="{{tile.span.col}}"
+                            md-colspan-sm="1"
+                            ng-class="tile.background" >
+                <md-icon md-svg-icon="{{tile.icon}}"></md-icon>
+                <img class="index-img" src="{{tile.icon}}">
+                <md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
+              </md-grid-tile>
+            </md-grid-list>
+          </div>
+  </md-content>
+</div>

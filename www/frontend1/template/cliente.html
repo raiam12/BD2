@@ -1,0 +1,107 @@
+<div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Empleados" >
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ver Clientes</h1>
+          <p>Aca podras ver la lista de todos los clientes de nuestra veterinaria</p>
+          <div ng-if="selectedG.length == 0" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+            <div class="table" ng-if="selectedG.length > 0">
+              <div class="row header">
+                <div flex="33">
+                 ID
+                </div>
+                <div flex="55">
+                  Nombre
+                </div>
+                <div flex>
+                  Apellido 1
+                </div>
+                <div flex>
+                  Apellido 2
+                </div>
+                <div flex>
+                  Telefono
+                </div>
+                <div flex>
+                  Email
+                </div>
+                <div flex>
+                  Direccion
+                </div>
+              </div>
+              <div class="row" 
+                   ng-repeat="item in selectedG">
+                <div flex="33">
+                  {{item.codCliente}}
+                </div>
+                <div flex="55">
+                  {{item.nombre}}
+                </div>
+                <div flex>
+                  {{item.apellido1}}
+                </div>
+                <div flex>
+                  {{item.apellido2}}
+                </div>
+                <div flex>
+                  {{item.telefono}}
+                </div>
+                <div flex>
+                  {{item.email}}
+                </div>
+                <div flex>
+                  {{item.direccion}}
+                </div>
+              </div>
+              
+            </div>
+            <ul class="numeration" >
+              <li ng-repeat = "index in groups" ng-click="change($index)"><a>{{$index + 1}}</a></li>
+            </ul>
+        </md-content>
+      </md-tab>
+      <md-tab label="Ingresar Nuevo Empleado">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Ingresar</h1>
+          <md-input-container>
+            <label>Cedula</label>
+            <input required name="clientName" ng-model="project.codCliente">
+          </md-input-container>
+          <md-input-container>
+            <label>Nombre</label>
+            <input required name="clientName" ng-model="project.nombre">
+          </md-input-container>
+          <md-input-container>
+            <label>Apellido 1</label>
+            <input required name="clientName" ng-model="project.apellido1">
+          </md-input-container>
+          <md-input-container>
+            <label>Apellido 2</label>
+            <input required name="clientName" ng-model="project.apellido2">
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input required name="clientName" ng-model="project.email">
+          </md-input-container>
+          <md-input-container>
+            <label>Direccion</label>
+            <input required name="clientName" ng-model="project.direccion">
+          </md-input-container>
+          <md-input-container>
+            <label>Telefono</label>
+            <input required name="clientName" ng-model="project.telefono">
+          </md-input-container>
+          
+
+          <md-button class="md-raised md-primary" ng-click="send(project)">Ingresar Cliente</md-button>
+
+
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+  </md-content>
+</div>
